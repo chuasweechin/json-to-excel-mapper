@@ -66,9 +66,9 @@ namespace JsonToExcelMapperTool.Utils
 
 		internal static void WriteJsonObjectToDataTable(ref DataTable dataTable, JObject jsonObject)
 		{
-			if (jsonObject["Data"] != null)
+			if (jsonObject["data"] != null)
 			{
-				foreach (JToken token in jsonObject["Data"].Children())
+				foreach (JToken token in jsonObject["data"].Children())
 				{
 					ReadJsonObjectPathAndValue(token, jsonObject, ref dataTable);
 				}
