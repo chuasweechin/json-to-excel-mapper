@@ -73,6 +73,13 @@ namespace JsonToExcelMapperTool.Utils
 					ReadJsonObjectPathAndValue(token, jsonObject, ref dataTable);
 				}
 			}
+			else if (jsonObject["Data"] != null)
+			{
+				foreach (JToken token in jsonObject["Data"].Children())
+				{
+					ReadJsonObjectPathAndValue(token, jsonObject, ref dataTable);
+				}
+			}
 			else
 			{
 				throw new FormatException();
